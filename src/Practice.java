@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Practice {
 
-  // Time Complexity: O(n)
+  // Time Complexity: O(n) where n = length of array
   // Space Complexity: O(1)
   public static List<Integer> findEvens(int[] array) {
     List<Integer> evens = new ArrayList<>();
@@ -17,8 +17,8 @@ public class Practice {
     return evens;
   }
 
-  // Time Complexity: O(n)
-  // Space Complexity: O(n)
+  // Time Complexity: O(n) where n = length of the matrix array
+  // Space Complexity: O(1)
   public static int sumDiagonal(int[][] matrix) {
     int sum = 0;
     for (int i = 0; i < matrix.length; i++) {
@@ -28,8 +28,8 @@ public class Practice {
   }
   
 
-  // Time Complexity: O(n)
-  // Space Complexity: O(n)
+  // Time Complexity: O(n) where n = the size of the array
+  // Space Complexity: O(1)
   // Does the 'T' look confusing? Consider refreshing on generic methods
   // We'll revisit generics as a class later
   public static <T> Map<T, Integer> countFrequencies(T[] array) {
