@@ -80,24 +80,20 @@ public class Practice {
       }
     }
 
-    // Variables to store max key and value pairs
-    int maxFrequency = Integer.MIN_VALUE;
-    int keyMaxFrequency = 0;
-    // Check max frequency
-    for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
-      // Store the key and value of each entry
-      Integer key = entry.getKey();
-      Integer value = entry.getValue();
+    // Variables to store the max frequency and the result
+    int maxFrequency = 0;
+    int result = nums[0];
 
-      // Mark as max only if its greater than current max
-      if (value > maxFrequency) {
-        keyMaxFrequency = key;
-        maxFrequency = value;
+    // Iterate over nums again checking for frequency of each number
+    for (int num : nums) {
+      int freq = frequencyMap.get(num);
+      if (freq > maxFrequency) {
+        maxFrequency = freq;
+        result = num;
       }
-    }
-
+}
     // in O(n) time. n = nums.size()
-    return keyMaxFrequency;
+    return result;
   }
 
   /**
@@ -137,6 +133,25 @@ public class Practice {
         mostCommon = nums[i];
       }
     }
+
+        // for each number in the array
+    for (int i = 0; i < nums.length; i++) {
+      int count = 0;
+      // count how many times it appears
+      for(int j = 0; j < nums.length; j++) {
+        // if we found it, increment count
+        if(nums[j] == nums[i]) {
+          count++;
+        }
+      }
+
+      // we want to update mostCommon but only if we found a number >
+      if(count > maxCount){
+        maxCount = count;
+        mostCommon = nums[i];
+      }
+    }
+
     // after checking all numbers we just return the most common one
     return mostCommon;
   }

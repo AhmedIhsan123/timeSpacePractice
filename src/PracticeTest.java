@@ -24,9 +24,9 @@ public class PracticeTest {
 
     @Test
   public void testTimeMostCommonNumber(){
-    int[] nums = {1,2,2,3};
+    int[] nums = {35, 32, 66, 23, 23, 32, 45, 32, 23};
     int actual = Practice.mostCommonTimeEfficient(nums);
-    assertEquals(2, actual);
+    assertEquals(32, actual);
   }
 
   @Test
