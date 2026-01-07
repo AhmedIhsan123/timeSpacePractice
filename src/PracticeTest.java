@@ -21,4 +21,18 @@ public class PracticeTest {
     int actual = Practice.mostCommonSpaceEfficient(nums);
     assertEquals(4, actual);
   }
+
+    @Test
+  public void testTimeMostCommonNumber(){
+    int[] nums = {1,2,2,3};
+    int actual = Practice.mostCommonTimeEfficient(nums);
+    assertEquals(2, actual);
+  }
+
+  @Test
+  public void testTimeTieReturnsFirst(){
+    int[] nums = {6,6,2,2,3,3,3,6};
+    int actual = Practice.mostCommonTimeEfficient(nums);
+    assertEquals(6, actual);
+  }
 }

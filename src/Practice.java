@@ -67,8 +67,37 @@ public class Practice {
    */
   public static int mostCommonTimeEfficient(int[] nums) {
     // TODO: Complete this method with an implementation that runs
+    Map<Integer, Integer> frequencyMap = new HashMap<>();
+
+    // Iterate through the array to populate map
+    for (int num : nums) {
+      if (frequencyMap.containsKey(num)) {
+        // Number found in map, tally 1
+        frequencyMap.put(num, frequencyMap.get(num) + 1);
+      } else {
+        // No number found, create an entry for one with the value of 0
+        frequencyMap.put(num, 1);
+      }
+    }
+
+    // Variables to store max key and value pairs
+    int maxFrequency = Integer.MIN_VALUE;
+    int keyMaxFrequency = 0;
+    // Check max frequency
+    for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
+      // Store the key and value of each entry
+      Integer key = entry.getKey();
+      Integer value = entry.getValue();
+
+      // Mark as max only if its greater than current max
+      if (value > maxFrequency) {
+        keyMaxFrequency = key;
+        maxFrequency = value;
+      }
+    }
+
     // in O(n) time. n = nums.size()
-    return -1;
+    return keyMaxFrequency;
   }
 
   /**
